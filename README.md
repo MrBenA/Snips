@@ -23,7 +23,7 @@ $ gcloud config list project
 :small_orange_diamond:
 Create new VM instance
 ```shell
-$ gcloud compute instances create <instancename> --machine-type <n1-standard-2> --zone <us-central1-f>
+$ gcloud compute instances create <instancename> --machine-type <n1-standard> --zone <us-central1-f>
 ```
 ---
 
