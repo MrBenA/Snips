@@ -4,7 +4,7 @@
 * [SQL](#SQL)
 * [Python](#python)
 * [Pandas](#pandas)
-
+<br>
 
 ## :large_orange_diamond: gcloud
 
@@ -62,7 +62,7 @@ SSH to VM
 ```shell
 $ gcloud compute ssh <instancename> --zone <zone>
 ```
-> omit the `--zone` flag if option set the globally
+> omit the `--zone` flag if option is set globally
 <br>
 
 ##### :white_medium_small_square: Install an NGINX webserver via SSH
