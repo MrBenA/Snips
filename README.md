@@ -16,12 +16,14 @@ List active acount name
 ```shell
 $ gcloud auth list
 ```
+<br>
 
 :small_orange_diamond:
 List project Id
 ```shell
 $ gcloud config list project
 ```
+<br>
 
 :small_orange_diamond:
 Identify your default region and zone
@@ -29,6 +31,7 @@ Identify your default region and zone
 $ gcloud compute project-info describe --project <your_project_ID>
 ```
 > If `google-compute-default-region` and `google-compute-default-zone` keys and values are missing from the output, no default zone or region is set.
+<br>
 
 :small_orange_diamond:
 Set default region and/or zone
@@ -45,12 +48,14 @@ See new VM instance defaults
 $ gcloud compute instances create --help
 ```
 > To exit `help`, press **CTRL + C**
+<br>
 
 :small_orange_diamond:
 Create new VM instance
 ```shell
 $ gcloud compute instances create <instancename> --machine-type <n1-standard> --zone <us-central1-f>
 ```
+<br>
 
 :small_orange_diamond:
 SSH to VM
@@ -58,6 +63,7 @@ SSH to VM
 $ gcloud compute ssh <instancename> --zone <zone>
 ```
 > omit the `--zone` flag if option set the globally
+<br>
 
 ##### :white_medium_small_square: Install an NGINX webserver via SSH
 
