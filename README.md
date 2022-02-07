@@ -6,7 +6,7 @@
 * [Pandas](#pandas)
 
 
-## gcloud
+## :large_orange_diamond: gcloud
 
 [gcloud CLI overview](https://cloud.google.com/sdk/gcloud)
 
@@ -36,6 +36,8 @@ Set default region and/or zone
 $ gcloud config set compute/region <region>
 $ gcloud config set compute/zone <zone>
 ```
+<br>
+
 ### Virtual Machines
 :small_orange_diamond:
 See new VM instance defaults
@@ -57,14 +59,13 @@ $ gcloud compute ssh <instancename> --zone <zone>
 ```
 > omit the `--zone` flag if option set the globally
 
-##### Install an NGINX webserver via SSH
-:white_medium_small_square:
-Root access
+##### :white_medium_small_square: Install an NGINX webserver via SSH
+
 ```shell
-$ sudo su -						/// Root Access
-$ apt-get update				/// Update OS
-$ apt-get install nginx -y		/// Install NGINX
-$ ps auwx | grep nginx			/// Confirm NGINX is running
+$ sudo su -                   /// Root Access
+$ apt-get update              /// Update OS
+$ apt-get install nginx -y    /// Install NGINX
+$ ps auwx | grep nginx        /// Confirm NGINX is running
 ```
 > Open VM external IP in a web browser.
 > http://EXTERNAL_IP/
