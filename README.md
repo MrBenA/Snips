@@ -1,4 +1,4 @@
-# syntax and command line pick-n-mix
+# Syntax and command line pick-n-mix
 
 * [GCP gcloud](#gcloud)
 * [SQL](#SQL)
@@ -8,6 +8,9 @@
 
 ## gcloud
 
+[gcloud CLI overview](https://cloud.google.com/sdk/gcloud)
+
+### Account details and defaults
 :small_orange_diamond:
 List active acount name
 ```shell
@@ -21,10 +24,56 @@ $ gcloud config list project
 ```
 
 :small_orange_diamond:
+Identify your default region and zone
+```shell
+$ gcloud compute project-info describe --project <your_project_ID>
+```
+> If `google-compute-default-region` and `google-compute-default-zone` keys and values are missing from the output, no default zone or region is set.
+
+:small_orange_diamond:
+Set default region and/or zone
+```shell
+$ gcloud config set compute/region <region>
+$ gcloud config set compute/zone <zone>
+```
+### Virtual Machines
+:small_orange_diamond:
+See new VM instance defaults
+```shell
+$ gcloud compute instances create --help
+```
+> To exit `help`, press **CTRL + C**
+
+:small_orange_diamond:
 Create new VM instance
 ```shell
 $ gcloud compute instances create <instancename> --machine-type <n1-standard> --zone <us-central1-f>
 ```
+
+:small_orange_diamond:
+SSH to VM
+```shell
+$ gcloud compute ssh <instancename> --zone <zone>
+```
+> omit the `--zone` flag if option set the globally
+
+##### Install an NGINX webserver via SSH
+:white_medium_small_square:
+Root access
+```shell
+$ sudo su -						/// Root Access
+$ apt-get update				/// Update OS
+$ apt-get install nginx -y		/// Install NGINX
+$ ps auwx | grep nginx			/// Confirm NGINX is running
+```
+> Open VM external IP in a web browser.
+> http://EXTERNAL_IP/
+
+
+
+
+
+
 ---
 
 ## SQL
@@ -37,3 +86,5 @@ $ gcloud compute instances create <instancename> --machine-type <n1-standard> --
 ## Pandas
 *
 ---
+
+> Written with [StackEdit](https://stackedit.io/).
