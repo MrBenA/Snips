@@ -2,7 +2,8 @@
 
 [gcloud CLI overview](https://cloud.google.com/sdk/gcloud)
 
-### Account details and defaults
+---
+## Account details and defaults
 :small_orange_diamond:
 List active acount name
 ```shell
@@ -31,9 +32,49 @@ Set default compute region and/or zone
 $ gcloud config set compute/region <region>
 $ gcloud config set compute/zone <zone>
 ```
+---
 <br>
 
-### Virtual Machines
+## CloudSQL
+:small_orange_diamond:
+Create a CloudSQL instance
+```shell
+$ gcloud sql instances create my-instance-name \
+--database-version=MYSQL_5_7 \
+--tier=db-g1-small \
+--region=europe-west2-c
+--root-pasword=passw0rd123 \
+--availability-type=zonal \
+--storage-size=10GB \
+--storage-type=HDD
+```
+
+:small_orange_diamond:
+Connect to CloudSQL instance
+```shell
+$ gcloud sql connect my-instance-name --user=root
+```
+
+:small_orange_diamond:
+Create a database
+```SQL
+CREATE DATABASE my_db;
+```
+
+:small_orange_diamond:
+Create a table
+```SQL
+CREATE TABLE my_db.my-table(
+    id varchar(255),
+    name varchar(255),
+    age integer
+);
+```
+
+---
+<br>
+
+## Virtual Machines
 :small_orange_diamond:
 See new VM instance defaults
 ```shell
@@ -67,9 +108,10 @@ $ ps auwx | grep nginx        /// Confirm NGINX is running
 ```
 > Open VM external IP in a web browser.
 > http://EXTERNAL_IP/
+---
 <br>
 
-### Kubernetes
+## Kubernetes
 
 :small_orange_diamond:
 Create a GKE cluster
