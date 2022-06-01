@@ -86,7 +86,7 @@ SELECT * FROM my_db.my-table LIMIT 10;
 ```
 
 :small_orange_diamond:
-Export CSV from CloudSQL to GCS
+Export to CSV from CloudSQL to GCS
 ```shell
 $ gcloud sql export csv mysql-instance-source \
 gs://GCS_bucket_name/db_export/exported_data.csv \
@@ -94,6 +94,8 @@ gs://GCS_bucket_name/db_export/exported_data.csv \
 --offload \
 --query='SELECT id, name, age FROM my-table;'
 ```
+> --offload - Offload an export to a temporary instance. Doing so reduces strain on source instances and allows other operations to be performed while the export is in progress.
+
 ---
 <br>
 
