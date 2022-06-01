@@ -70,7 +70,30 @@ CREATE TABLE my_db.my-table(
     age integer
 );
 ```
+:small_orange_diamond:
+Import CSV from GCS to CloudSQL
+```shell
+$ gcloud sql import csv mysql-instance-source \
+gs://GCS_bucket_name/csv_data/some_data.csv \
+--database=my_db \
+--table=my-table
+```
 
+:small_orange_diamond:
+Check table has been loaded with data
+```SQL
+SELECT * FROM my_db.my-table LIMIT 10;
+```
+
+:small_orange_diamond:
+Export CSV from CloudSQL to GCS
+```shell
+$ gcloud sql export csv mysql-instance-source \
+gs://GCS_bucket_name/db_export/exported_data.csv \
+--database=my_db \
+--offload \
+--query='SELECT id, name, age FROM my-table;'
+```
 ---
 <br>
 
