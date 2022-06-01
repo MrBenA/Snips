@@ -2,6 +2,8 @@
 
 [gcloud CLI overview](https://cloud.google.com/sdk/gcloud)
 
+[gcloud Reference](https://cloud.google.com/sdk/gcloud/reference)
+
 ---
 ## Account details and defaults
 :small_orange_diamond:
