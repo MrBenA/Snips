@@ -1,9 +1,9 @@
 # Syntax and command line pick-n-mix
 
-* [GCP gcloud](#gcloud)
-* [SQL](#SQL)
-* [Python](#python)
-* [Pandas](#pandas)
+* [GCP gcloud](https://github.com/MrBenA/pick-n-mix/tree/master/GCP)
+* [SQL](https://github.com/MrBenA/pick-n-mix/tree/master/SQL)
+* [Python](https://github.com/MrBenA/pick-n-mix/tree/master/Python)
+* [Pandas](https://github.com/MrBenA/pick-n-mix/tree/master/Pandas)
 <br>
 
 
