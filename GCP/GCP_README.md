@@ -50,18 +50,21 @@ $ gcloud sql instances create my-instance-name \
 --storage-size=10GB \
 --storage-type=HDD
 ```
+<br>
 
 :small_orange_diamond:
 Connect to CloudSQL instance
 ```shell
 $ gcloud sql connect my-instance-name --user=root
 ```
+<br>
 
 :small_orange_diamond:
 Create a database
 ```SQL
 CREATE DATABASE my_db;
 ```
+<br>
 
 :small_orange_diamond:
 Create a table
@@ -72,6 +75,8 @@ CREATE TABLE my_db.my-table(
     age integer
 );
 ```
+<br>
+
 :small_orange_diamond:
 Import CSV from GCS to CloudSQL
 ```shell
@@ -80,12 +85,14 @@ gs://GCS_bucket_name/csv_data/some_data.csv \
 --database=my_db \
 --table=my-table
 ```
+<br>
 
 :small_orange_diamond:
 Check table has been loaded with data
 ```SQL
 SELECT * FROM my_db.my-table LIMIT 10;
 ```
+<br>
 
 :small_orange_diamond:
 Export to CSV from CloudSQL to GCS
@@ -97,6 +104,13 @@ gs://GCS_bucket_name/db_export/exported_data.csv \
 --query='SELECT id, name, age FROM my-table;'
 ```
 > --offload - Offload an export to a temporary instance. Doing so reduces strain on source instances and allows other operations to be performed while the export is in progress.
+<br>
+
+:small_orange_diamond:
+Delete CloudSQL instance
+```shell
+$ gcloud sql instances delete my-instance-name
+```
 
 ---
 <br>
